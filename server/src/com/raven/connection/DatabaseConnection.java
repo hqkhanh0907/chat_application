@@ -1,5 +1,6 @@
 package com.raven.connection;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,7 +25,8 @@ public class DatabaseConnection {
     }
 
     public void connectToDatabase() throws SQLException {
-        String currentDirectory = System.getProperty("user.dir");
+        String currentDirectory = new File("").getAbsolutePath();
+        System.out.println(currentDirectory);
         connection = java.sql.DriverManager.getConnection("jdbc:sqlite:" + currentDirectory + "/db/chat_application.db");
     }
 
