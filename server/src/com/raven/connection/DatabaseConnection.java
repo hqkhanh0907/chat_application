@@ -25,7 +25,6 @@ public class DatabaseConnection {
 
     public void connectToDatabase() throws SQLException {
         String currentDirectory = System.getProperty("user.dir");
-        System.out.println(currentDirectory);
         connection = java.sql.DriverManager.getConnection("jdbc:sqlite:" + currentDirectory + "/db/chat_application.db");
     }
 
